@@ -1,9 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 // by default runs after every re-render
 // cleanup function
 // second parameter
+
 const UseEffectBasics = () => {
-  return <h2>useEffect Basics</h2>;
+  const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    console.log("UseEffect hook");
+
+    if (value >= 1) {
+      document.title = `Messages: ${value}`;
+    }
+  });
+
+  console.log("Rendered first");
+
+  return (
+    <>
+      <h1>Messages {value}</h1>
+      <button
+        type="button"
+        className="btn"
+        onClick={() =>
+          setValue((prevValue) => {
+            return prevValue + 1;
+          })
+        }
+      >
+        Increase Value
+      </button>
+    </>
+  );
 };
 
 export default UseEffectBasics;
