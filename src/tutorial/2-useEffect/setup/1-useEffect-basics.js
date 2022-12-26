@@ -12,7 +12,7 @@ const UseEffectBasics = () => {
     if (value >= 1) {
       document.title = `Messages: ${value}`;
     }
-  });
+  }, [value]);
 
   console.log("Rendered first");
 
