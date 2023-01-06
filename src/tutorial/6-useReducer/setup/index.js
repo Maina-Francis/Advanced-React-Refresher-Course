@@ -1,18 +1,7 @@
 import React, { useState, useReducer } from "react";
 import Modal from "./Modal";
 import { data } from "../../../data";
-// reducer function
-const reducer = (state, action) => {
-  console.log(action);
-  if (action.type === "ADD_ITEM") {
-    return {
-      ...state,
-      people: data,
-      isModalOpen: true,
-      modalContent: "Item Added",
-    };
-  }
-};
+import { reducer } from "./reducer";
 
 const defaultState = {
   people: [],
